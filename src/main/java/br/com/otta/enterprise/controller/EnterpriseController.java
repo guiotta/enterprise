@@ -3,7 +3,6 @@ package br.com.otta.enterprise.controller;
 import java.util.Collection;
 
 import javax.inject.Inject;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.otta.enterprise.service.EnterpriseService;
@@ -20,23 +19,23 @@ public class EnterpriseController implements EnterpriseApi {
     }
 
     @Override
-    public ResponseEntity<Enterprise> findEnterpriseById(long id) {
-        return ResponseEntity.ok(service.findById(id));
+    public Enterprise findEnterpriseById(long id) {
+        return service.findById(id);
     }
 
     @Override
-    public ResponseEntity<Collection<Enterprise>> listAllEnterprises() {
-        return ResponseEntity.ok(service.findAll());
+    public Collection<Enterprise> listAllEnterprises() {
+        return service.findAll();
     }
 
     @Override
-    public ResponseEntity<Enterprise> saveEnterprise(Enterprise enterprise) {
-        return ResponseEntity.ok(service.save(enterprise));
+    public Enterprise saveEnterprise(Enterprise enterprise) {
+        return service.save(enterprise);
     }
 
     @Override
-    public ResponseEntity<Enterprise> updateEnterprise(Enterprise enterprise) {
-        return ResponseEntity.ok(service.update(enterprise));
+    public Enterprise updateEnterprise(Enterprise enterprise) {
+        return service.update(enterprise);
     }
 
 }
